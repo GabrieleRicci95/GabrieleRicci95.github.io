@@ -7,13 +7,13 @@
     <!-- Font moderno da Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* --- STILI GENERALI (Migliorati) --- */
+        /* --- STILI GENERALI --- */
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8; /* Grigio-azzurro molto chiaro */
+            background-color: #f0f4f8; 
             color: #2c3e50;
         }
         /* --- HEADER CON GRADIENTE E FOTO --- */
@@ -39,7 +39,6 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        /* Se vuoi mettere una tua foto, in futuro potrai togliere le lettere "GR" e usare un tag img */
         header h1 {
             margin: 0;
             font-size: 2.5rem;
@@ -54,7 +53,7 @@
         .container {
             width: 90%;
             max-width: 900px;
-            margin: -2rem auto 3rem auto; /* Sale leggermente sopra l'header */
+            margin: -2rem auto 3rem auto; 
             background: white;
             padding: 3rem;
             border-radius: 15px;
@@ -135,7 +134,7 @@
             border-color: #667eea;
             transform: translateY(-3px);
         }
-        /* --- STILI PER IL CHATBOT (Più moderni) --- */
+        /* --- STILI PER IL CHATBOT --- */
         #chat-button {
             position: fixed;
             bottom: 30px;
@@ -236,7 +235,6 @@
         #send-btn:hover {
             color: #667eea;
         }
-        /* Adattamento per schermi piccoli (cellulari) */
         @media (max-width: 768px) {
             .container { width: 95%; padding: 1.5rem; margin-top: -1rem; }
             #chat-window { width: 90%; right: 5%; bottom: 100px; }
@@ -246,7 +244,6 @@
 </head>
 <body>
     <header>
-        <!-- Cerchio per foto profilo -->
         <div class="profile-pic">
             GR
         </div>
@@ -273,17 +270,23 @@
                 <a href="https://github.com/GabrieleRicci95/gardigital-menu" target="_blank" class="project-link">Vedi Codice su GitHub &rarr;</a>
             </div>
             
-            <!-- PROSSIMO PROGETTO (App Meteo o CRUD) -->
-            <div class="project-card" style="border: 2px dashed #ccc; background: #fafafa; text-align: center; justify-content: center; opacity: 0.7;">
-                <h3 style="color: #999;">Nuovo Progetto</h3>
-                <p style="color: #999;">Work in progress... 👀</p>
+            <!-- PROGETTO 3: APP METEO -->
+            <div class="project-card">
+                <h3>App Meteo (API)</h3>
+                <p>Applicazione web in Javascript che comunica con server esterni (Open-Meteo API) per cercare coordinate GPS e mostrare la temperatura attuale di qualsiasi città in tempo reale.</p>
+                
+                <!-- Due bottoni per l'app meteo -->
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                    <a href="https://gabrielericci95.github.io/app-meteo/" target="_blank" class="project-link" style="flex: 1; background: #2c3e50;">Prova l'App ↗</a>
+                    <a href="https://github.com/GabrieleRicci95/app-meteo" target="_blank" class="project-link" style="flex: 1;">Codice &rarr;</a>
+                </div>
             </div>
         </div>
         <h2>Contatti</h2>
         <p>Vuoi saperne di più o collaborare a un progetto? Troviamoci online:</p>
         <ul class="contact-list">
             <li>📱 <strong>Telefono:</strong> 380 75 44 502</li>
-            <li>📧 <a href="mailto:gabrielericci234@gmail.com">Email Personale</a></li>
+            <li>📧 <a href="mailto:gabrielericci234@gmail.com">gabrielericci234@gmail.com</a></li>
             <li>💼 <a href="https://www.linkedin.com/in/gabriele-ricci-5b5047208/" target="_blank">Profilo LinkedIn</a></li>
             <li>💻 <a href="https://github.com/GabrieleRicci95" target="_blank">GitHub</a></li>
         </ul>
@@ -349,8 +352,8 @@
             if (input.includes('contatt') || input.includes('email') || input.includes('telefono') || input.includes('chiama') || input.includes('numero')) {
                 return 'Certo! Puoi chiamare Gabriele al numero 380 75 44 502, scrivergli una mail a gabrielericci234@gmail.com, oppure tramite il suo profilo LinkedIn (trovi i bottoni sulla pagina).';
             }
-            if (input.includes('progetti') || input.includes('lavori')) {
-                return 'Attualmente i progetti principali sono "Laboratorio Imbroglia" e "Gardigital Menu". Ne stiamo sviluppando altri proprio adesso!';
+            if (input.includes('progetti') || input.includes('lavori') || input.includes('meteo')) {
+                return 'Attualmente i progetti principali sono "Laboratorio Imbroglia", "Gardigital Menu" e una nuovissima "App Meteo" basata su API. Provala subito, la trovi qui sulla pagina!';
             }
             return 'Interessante! Sono un bot ancora in addestramento, quindi ti consiglio di usare la sezione Contatti per parlare direttamente con Gabriele!';
         }
