@@ -346,6 +346,7 @@
         </div>
         <h2>I miei Progetti</h2>
         <div class="project-grid">
+            
             <!-- PROGETTO 1 -->
             <div class="project-card">
                 <h3>Laboratorio Imbroglia</h3>
@@ -368,15 +369,25 @@
                     <a href="https://github.com/GabrieleRicci95/app-meteo" target="_blank" class="project-link" style="flex: 1;">Codice &rarr;</a>
                 </div>
             </div>
-                    <!-- PROGETTO 4 -->
+            <!-- PROGETTO 4 (Gestore Finanze) -->
             <div class="project-card">
                 <h3>Gestore Finanze (CRUD)</h3>
-                <p>Applicazione web per il tracciamento di entrate e uscite. Sviluppata in Javascript puro utilizzando il <strong>LocalStorage</strong> del browser per mantenere i dati salvati in modo permanente.</p>
+                <p>Applicazione web per il tracciamento di entrate e uscite. Sviluppata in Javascript puro utilizzando il <strong>LocalStorage</strong> per mantenere i dati salvati in modo permanente.</p>
                 <div style="display: flex; gap: 10px; margin-top: auto;">
-                    <a href="https://gabrielericci95.github.io/gestore-finanze/" target="_blank" class="project-link" style="flex: 1; background: #10b981;">Apri App ↗</a>
+                    <a href="https://gabrielericci95.github.io/gestore-finanze/" target="_blank" class="project-link" style="flex: 1; background: #10b981;">Prova l'App ↗</a>
                     <a href="https://github.com/GabrieleRicci95/gestore-finanze" target="_blank" class="project-link" style="flex: 1;">Codice &rarr;</a>
                 </div>
             </div>
+            <!-- PROGETTO 5 (Mini Gestionale CRM) -->
+            <div class="project-card">
+                <h3>CRM Dashboard</h3>
+                <p>Mini gestionale per aziende. Interfaccia SAAS professionale con barra laterale, grafici statistici interattivi (Chart.js) e gestione clienti in tempo reale.</p>
+                <div style="display: flex; gap: 10px; margin-top: auto;">
+                    <a href="https://gabrielericci95.github.io/mini-gestionale/" target="_blank" class="project-link" style="flex: 1; background: #3b82f6;">Prova l'App ↗</a>
+                    <a href="https://github.com/GabrieleRicci95/mini-gestionale" target="_blank" class="project-link" style="flex: 1;">Codice &rarr;</a>
+                </div>
+            </div>
+        </div>
         <h2>Contatti</h2>
         <p>Vuoi saperne di più o collaborare a un progetto? Troviamoci online:</p>
         <ul class="contact-list">
@@ -432,7 +443,7 @@
             if (input.includes('competenze') || input.includes('linguaggi') || input.includes('react') || input.includes('node')) return 'Gabriele è un Full Stack Developer. Usa React, Next.js, Node.js, PHP, e TypeScript. È molto forte nel Problem Solving grazie al suo passato industriale!';
             if (input.includes('formazione') || input.includes('scuola') || input.includes('studi')) return 'Si è diplomato in Meccatronica, ma nel 2025 ha preso una qualifica ufficiale come Full Stack Web Developer. Lavora come freelance dal 2026.';
             if (input.includes('contatt')) return 'Puoi chiamare Gabriele al 380 75 44 502, oppure usare la mail o LinkedIn.';
-            if (input.includes('progetti') || input.includes('lavori')) return 'Ha creato un gestionale (Imbroglia), un Menu Digitale e una Dashboard Meteo avanzata. Presto arriverà anche un Gestore Finanze!';
+            if (input.includes('progetti') || input.includes('lavori')) return 'Ha ben 5 progetti in vetrina! Spiccano in particolare la CRM Dashboard aziendale e il Gestore Finanze in JS.';
             return 'Interessante! Usa la sezione Contatti per parlare direttamente con Gabriele!';
         }
     </script>
