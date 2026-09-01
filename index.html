@@ -3,193 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio di Gabriele Ricci</title>
+    <title>Gabriele Ricci | Software Developer</title>
+    <!-- Font moderno da Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* --- STILI GENERALI (Migliorati) --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f0f4f8; /* Grigio-azzurro molto chiaro */
+            color: #2c3e50;
         }
+        /* --- HEADER CON GRADIENTE E FOTO --- */
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #fff;
-            padding: 3rem 0;
+            padding: 4rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .container {
-            width: 80%;
-            max-width: 900px;
-            margin: auto;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            background-color: #e0e0e0;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #764ba2;
             overflow: hidden;
-            padding: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        /* Se vuoi mettere una tua foto, in futuro potrai togliere le lettere "GR" e usare un tag img */
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        /* --- CONTENITORE CENTRALE --- */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: -2rem auto 3rem auto; /* Sale leggermente sopra l'header */
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #764ba2;
+            border-bottom: 2px solid #f0f4f8;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        /* --- CARD DEI PROGETTI --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
         .project-card {
-            background: #fff;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .project-link {
+            margin-top: auto;
+            display: inline-block;
+            background: #667eea;
+            color: white !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .project-link:hover {
+            background: #764ba2;
+            text-decoration: none !important;
         }
         a {
-            color: #3498db;
+            color: #667eea;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
         a:hover {
             text-decoration: underline;
         }
+        /* --- CONTATTI --- */
         .contact-list {
             list-style: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         .contact-list li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            background: #f8f9fa;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            border: 1px solid #eee;
+            transition: all 0.3s;
         }
-        /* --- STILI PER IL CHATBOT --- */
+        .contact-list li:hover {
+            background: #fff;
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+        /* --- STILI PER IL CHATBOT (Più moderni) --- */
         #chat-button {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #3498db;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 24px;
+            width: 65px;
+            height: 65px;
+            font-size: 30px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
             transition: transform 0.3s;
+            z-index: 1000;
         }
         #chat-button:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
         }
         #chat-window {
-            display: none; /* Nascosto di default */
+            display: none;
             position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 300px;
+            bottom: 110px;
+            right: 30px;
+            width: 350px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            z-index: 1000;
             border: 1px solid #ddd;
         }
         .chat-header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         .chat-body {
-            height: 250px;
-            padding: 10px;
+            height: 300px;
+            padding: 15px;
             overflow-y: auto;
-            background-color: #fafafa;
+            background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
         .chat-message {
-            margin-bottom: 10px;
-            padding: 8px 12px;
-            border-radius: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
             max-width: 80%;
+            font-size: 0.95rem;
             word-wrap: break-word;
+            line-height: 1.4;
         }
         .bot-message {
-            background-color: #e0e0e0;
+            background-color: #e9ecef;
+            color: #333;
             align-self: flex-start;
-            border-bottom-left-radius: 0;
+            border-bottom-left-radius: 2px;
         }
         .user-message {
-            background-color: #3498db;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             align-self: flex-end;
-            border-bottom-right-radius: 0;
+            border-bottom-right-radius: 2px;
         }
         .chat-input-area {
             display: flex;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #eee;
+            background: #fff;
+            padding: 10px;
         }
         #chat-input {
             flex: 1;
-            padding: 10px;
-            border: none;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
             outline: none;
+            font-family: inherit;
+        }
+        #chat-input:focus {
+            border-color: #667eea;
         }
         #send-btn {
-            background-color: #3498db;
-            color: white;
+            background: transparent;
+            color: #764ba2;
             border: none;
             padding: 0 15px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 1.1rem;
         }
         #send-btn:hover {
-            background-color: #2980b9;
+            color: #667eea;
+        }
+        /* Adattamento per schermi piccoli (cellulari) */
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 1.5rem; margin-top: -1rem; }
+            #chat-window { width: 90%; right: 5%; bottom: 100px; }
+            .contact-list { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ciao, sono Gabriele Ricci</h1>
-        <p>Sviluppatore Software | Costruisco soluzioni digitali</p>
+        <!-- Cerchio per foto profilo -->
+        <div class="profile-pic">
+            GR
+        </div>
+        <h1>Gabriele Ricci</h1>
+        <p>Software Developer | Costruisco soluzioni digitali</p>
     </header>
     <div class="container">
         
         <h2>Chi sono</h2>
-        <p>Benvenuto nel mio portfolio! Sono uno sviluppatore appassionato di programmazione e sempre pronto a imparare nuove tecnologie. In questa pagina puoi esplorare alcuni dei miei progetti più recenti. Sono attivamente alla ricerca di nuove opportunità lavorative per mettere in pratica e ampliare le mie competenze.</p>
+        <p>Benvenuto nel mio portfolio! Sono uno sviluppatore appassionato di programmazione, focalizzato sulla creazione di software pulito e funzionale. Mi piace affrontare sfide logiche e imparare costantemente nuove tecnologie. Attualmente sto arricchendo il mio bagaglio tecnico e sono alla ricerca di nuove opportunità lavorative per dimostrare sul campo le mie competenze.</p>
         <h2>I miei Progetti</h2>
         
-        <div class="project-card">
-            <h3>Laboratorio Imbroglia</h3>
-            <p>Progetto software dedicato alla gestione del laboratorio.</p>
-            <a href="https://github.com/GabrieleRicci95/laboratorio-imbroglia" target="_blank">Vedi il codice su GitHub &rarr;</a>
-        </div>
-        <div class="project-card">
-            <h3>Gardigital Menu</h3>
-            <p>Sviluppo di un sistema di menu digitale.</p>
-            <a href="https://github.com/GabrieleRicci95/gardigital-menu" target="_blank">Vedi il codice su GitHub &rarr;</a>
+        <div class="project-grid">
+            <!-- PROGETTO 1 -->
+            <div class="project-card">
+                <h3>Laboratorio Imbroglia</h3>
+                <p>Applicazione software dedicata all'organizzazione e gestione delle attività del laboratorio.</p>
+                <a href="https://github.com/GabrieleRicci95/laboratorio-imbroglia" target="_blank" class="project-link">Vedi Codice su GitHub &rarr;</a>
+            </div>
+            <!-- PROGETTO 2 -->
+            <div class="project-card">
+                <h3>Gardigital Menu</h3>
+                <p>Sviluppo di un sistema interattivo per la visualizzazione di menu digitali, pensato per la ristorazione.</p>
+                <a href="https://github.com/GabrieleRicci95/gardigital-menu" target="_blank" class="project-link">Vedi Codice su GitHub &rarr;</a>
+            </div>
+            
+            <!-- PROSSIMO PROGETTO (App Meteo o CRUD) -->
+            <div class="project-card" style="border: 2px dashed #ccc; background: #fafafa; text-align: center; justify-content: center; opacity: 0.7;">
+                <h3 style="color: #999;">Nuovo Progetto</h3>
+                <p style="color: #999;">Work in progress... 👀</p>
+            </div>
         </div>
         <h2>Contatti</h2>
-        <p>Sei interessato al mio profilo o vuoi saperne di più sui miei progetti? Contattami qui:</p>
+        <p>Vuoi saperne di più o collaborare a un progetto? Troviamoci online:</p>
         <ul class="contact-list">
+            <!-- SOSTITUISCI GLI ZERI CON IL TUO NUMERO -->
+            <li>📱 <strong>Telefono:</strong> 000 000 0000</li>
+            <li>📧 <a href="mailto:gabrielericci234@gmail.com">Email Personale</a></li>
             <li>💼 <a href="https://www.linkedin.com/in/gabriele-ricci-5b5047208/" target="_blank">Profilo LinkedIn</a></li>
-            <li>📧 <a href="mailto:gabrielericci234@gmail.com">gabrielericci234@gmail.com</a></li>
-            <li>💻 <a href="https://github.com/GabrieleRicci95" target="_blank">Tutte le mie repository su GitHub</a></li>
+            <li>💻 <a href="https://github.com/GabrieleRicci95" target="_blank">GitHub</a></li>
         </ul>
     </div>
     <!-- --- STRUTTURA HTML DEL CHATBOT --- -->
     <button id="chat-button">💬</button>
     <div id="chat-window">
         <div class="chat-header">
-            Assistente di Gabriele
+            Assistente di Gabriele 🤖
         </div>
         <div class="chat-body" id="chat-body">
             <div class="chat-message bot-message">
-                Ciao! Sono l'assistente virtuale di Gabriele. Puoi chiedermi delle sue "competenze", dei "progetti" o come "contattarlo". Come posso aiutarti?
+                Ciao! 👋 Sono l'assistente virtuale di Gabriele. Puoi chiedermi delle sue "competenze", dei suoi "progetti" o i suoi "contatti". Come posso aiutarti?
             </div>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="chat-input" placeholder="Scrivi un messaggio..." onkeypress="handleKeyPress(event)">
-            <button id="send-btn" onclick="sendMessage()">Invia</button>
+            <input type="text" id="chat-input" placeholder="Scrivi qui..." onkeypress="handleKeyPress(event)">
+            <button id="send-btn" onclick="sendMessage()">➤</button>
         </div>
     </div>
     <!-- --- LOGICA JAVASCRIPT DEL CHATBOT --- -->
     <script>
-        // Gestione apertura/chiusura della chat
         const chatButton = document.getElementById('chat-button');
         const chatWindow = document.getElementById('chat-window');
         const chatBody = document.getElementById('chat-body');
@@ -201,49 +318,43 @@
                 chatWindow.style.display = 'none';
             }
         });
-        // Funzione per inviare il messaggio con il tasto Invio
         function handleKeyPress(e) {
             if (e.key === 'Enter') {
                 sendMessage();
             }
         }
-        // Funzione principale che gestisce la chat
         function sendMessage() {
             const userText = chatInput.value.trim();
             if (userText === '') return;
-            // 1. Mostra il messaggio dell'utente
             appendMessage(userText, 'user-message');
             chatInput.value = '';
-            // 2. Il Bot elabora la risposta
             setTimeout(() => {
                 const botReply = getBotResponse(userText.toLowerCase());
                 appendMessage(botReply, 'bot-message');
-            }, 600); // Piccolo ritardo per simulare che stia pensando
+            }, 600);
         }
-        // Funzione per aggiungere messaggi nella schermata
         function appendMessage(text, className) {
             const messageDiv = document.createElement('div');
             messageDiv.className = 'chat-message ' + className;
             messageDiv.textContent = text;
             chatBody.appendChild(messageDiv);
-            chatBody.scrollTop = chatBody.scrollHeight; // Scorre in basso in automatico
+            chatBody.scrollTop = chatBody.scrollHeight;
         }
-        // Il "Cervello" del Chatbot: capisce le parole chiave
         function getBotResponse(input) {
             if (input.includes('ciao') || input.includes('salve') || input.includes('buongiorno')) {
-                return 'Ciao! Grazie per aver visitato il portfolio. Cosa vorresti sapere su Gabriele?';
+                return 'Ciao! Grazie per aver visitato questo portfolio. Cosa vorresti sapere su Gabriele?';
             }
             if (input.includes('competenze') || input.includes('linguaggi') || input.includes('tecnologie') || input.includes('sai fare')) {
-                return 'Gabriele è uno sviluppatore software in crescita. Ha esperienza nella creazione di gestionali e applicazioni web (come Gardigital Menu) e continua a studiare per ampliare le sue conoscenze!';
+                return 'Gabriele è uno sviluppatore focalizzato sulla creazione di gestionali e applicazioni web robuste (come Gardigital Menu). Impara velocemente e si adatta a nuove tecnologie!';
             }
-            if (input.includes('contatt') || input.includes('email') || input.includes('telefono')) {
-                return 'Puoi scrivergli una mail a gabrielericci234@gmail.com oppure contattarlo su LinkedIn (trovi il link qui a sinistra).';
+            if (input.includes('contatt') || input.includes('email') || input.includes('telefono') || input.includes('chiama') || input.includes('numero')) {
+                // ANCHE QUI, SOSTITUISCI GLI ZERI CON IL TUO NUMERO
+                return 'Certo! Puoi chiamare Gabriele al numero 000 000 0000, scrivergli una mail a gabrielericci234@gmail.com, oppure tramite il suo profilo LinkedIn (trovi i bottoni sulla pagina).';
             }
             if (input.includes('progetti') || input.includes('lavori')) {
-                return 'I suoi progetti principali sono qui sulla pagina! Al momento sono in evidenza "Laboratorio Imbroglia" e "Gardigital Menu".';
+                return 'Attualmente i progetti principali sono "Laboratorio Imbroglia" e "Gardigital Menu". Ne stiamo sviluppando altri proprio adesso!';
             }
-            // Risposta di default se non capisce
-            return 'Interessante! Sono un bot molto semplice, quindi ti consiglio di contattare direttamente Gabriele via email o LinkedIn per approfondire questo argomento!';
+            return 'Interessante! Sono un bot ancora in addestramento, quindi ti consiglio di usare la sezione Contatti per parlare direttamente con Gabriele!';
         }
     </script>
 </body>
